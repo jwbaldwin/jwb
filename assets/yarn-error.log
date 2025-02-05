@@ -1,0 +1,40 @@
+Arguments: 
+  /Users/jbaldwin/.asdf/installs/nodejs/18.7.0/bin/node /usr/local/bin/yarn add @tailwindcss/prose
+
+PATH: 
+  /Users/jbaldwin/.asdf/plugins/nodejs/shims:/Users/jbaldwin/.asdf/installs/nodejs/18.7.0/bin:/Users/jbaldwin/.codeium/windsurf/bin:/Users/jbaldwin/.asdf/shims:/Users/jbaldwin/.asdf/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Users/jbaldwin/Library/pnpm:/Users/jbaldwin/.cargo/bin:/home/username/bin:/usr/local/homebrew:/usr/local/opt/go/libexec/bin:/Users/jbaldwin/.go/bin:/Users/jbaldwin/.emacs.d/bin:/Users/jbaldwin/.cargo/env:/Users/jbaldwin/.local/bin:/usr/local/sbin:/home/username/bin:/usr/local/homebrew:/usr/local/opt/go/libexec/bin:/Users/jbaldwin/.go/bin:/Users/jbaldwin/.emacs.d/bin:/Users/jbaldwin/.cargo/env:/Users/jbaldwin/.local/bin:/usr/local/sbin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  18.7.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@tailwindcss%2fprose: Not found
+      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66091:18)
+      at self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:129590:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:130562:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:130484:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "devDependencies": {
+      "tailwind-corner-smoothing": "^1.2.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

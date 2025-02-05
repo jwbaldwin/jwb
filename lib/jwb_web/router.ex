@@ -19,6 +19,15 @@ defmodule JwbWeb.Router do
 
     live_session :app, on_mount: [{JwbWeb.CurrentURL, :current_path}] do
       live "/", HomeLive, :index
+
+      live "/blog", BlogLive, :index
+      live "/blog/:slug", BlogLive, :show
+
+      live "/projects", ProjectsLive, :index
+      live "/projects/:project", ProjectsLive, :show
+
+      live "/bookmarks", BookmarksLive, :index
+      live "/things", ThingsLive, :index
     end
   end
 

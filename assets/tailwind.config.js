@@ -8,5 +8,9 @@ const path = require("path");
 module.exports = {
   content: ["./js/**/*.js", "../lib/jwb_web.ex", "../lib/jwb_web/**/*.*ex"],
   theme: {},
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("tailwind-corner-smoothing"),
+    require("@tailwindcss/typography"),
+  ],
 };
