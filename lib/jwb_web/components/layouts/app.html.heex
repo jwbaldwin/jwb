@@ -1,0 +1,10 @@
+<div class="min-h-screen bg-[#000] text-gray-100">
+  <.sidebar current_url={@current_url} />
+
+  <main class="px-4 py-20 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl">
+      <.flash_group flash={@flash} />
+      {@inner_content}
+    </div>
+  </main>
+</div>

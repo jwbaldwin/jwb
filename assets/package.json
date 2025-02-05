@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "tailwind-corner-smoothing": "^1.2.0"
+  }
+}
