@@ -1,12 +1,10 @@
 ---
 category: game
-title: Sphxace Invaders
-description: A Space Invaders-type game implemented using Phoenix LiveView to
-  showcase the performance of the Phoenix Channels API over a network
-cover: /img/screen-shot-2021-05-01-at-8.47.40-pm.png
-gallery:
-  - /img/screen-shot-2021-05-01-at-8.48.27-pm.png
-position: 3
+name: Sphxace Invaders
+description: A Space Invaders-type game implemented using Phoenix LiveView to showcase the performance of the Phoenix Channels API over a network
+cover: /images/screen-shot-2021-05-01-at-8.47.40-pm.png
+gallery: ["/images/screen-shot-2021-05-01-at-8.48.27-pm.png"]
+position: 5
 ---
 ### What is it?
 

@@ -1,11 +1,10 @@
 ---
 category: iOS App
-title: Rize
-description: An iOS app that attempted to connect viral-marketing trends with
-  small businesses
-cover: ""
+name: Rize
+description: An iOS app that attempted to connect viral-marketing trends with small businesses
+cover: /images/rize.svg
 gallery: []
-position: 4
+position: 6
 ---
 This was an iOS app built alongside two friends that sought to combine viral "trends" with supporting small businesses.
 

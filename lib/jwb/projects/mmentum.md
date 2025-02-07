@@ -1,11 +1,10 @@
 ---
 category: SaaS App
-title: Mmentum
+name: Mmentum
 description: Mmentum is an app that helps me build habits by keeping momentum!
-cover: /img/mmentum.png
-gallery:
-  - /img/og_image.png
-position: 1
+cover: /images/mmentum.png
+gallery: ["/images/og_image.png"]
+position: 3
 ---
 [https://mmentum.io](https://www.mmentum.io)
 

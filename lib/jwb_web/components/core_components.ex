@@ -558,15 +558,37 @@ defmodule JwbWeb.CoreComponents do
 
   def back(assigns) do
     ~H"""
-    <div class="mt-16">
-      <.link
-        navigate={@navigate}
-        class="text-sm font-semibold leading-6 text-zinc-900 hover:text-zinc-700"
+    <.link
+      navigate={@navigate}
+      class="text-sm font-semibold leading-6 text-zinc-400 hover:text-zinc-300 no-underline flex items-center"
+    >
+      <svg
+        class="h-4 w-4 mr-2"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <.icon name="hero-arrow-left-solid" class="h-3 w-3" />
-        {render_slot(@inner_block)}
-      </.link>
-    </div>
+        <path
+          opacity="0.4"
+          d="M21 11.9999L15 11.9999"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10 5L3 11.9999M3 11.9999L10 18.9999M3 11.9999H15"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      {render_slot(@inner_block)}
+    </.link>
     """
   end
 

@@ -60,7 +60,12 @@ defmodule Jwb.MixProject do
       {:bandit, "~> 1.5"},
       {:earmark, "~> 1.4"},
       {:makeup, "~> 1.2"},
-      {:makeup_elixir, "~> 1.0"}
+      {:makeup_elixir, "~> 1.0"},
+      {:makeup_html, "~> 0.1"},
+      {:makeup_eex, "~> 2.0"},
+      {:makeup_json, "~> 0.1.1"},
+      {:makeup_diff, "~> 0.1.1"},
+      {:makeup_js, "~> 0.1.0"}
     ]
   end
 

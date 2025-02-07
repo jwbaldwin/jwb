@@ -24,10 +24,10 @@ To build habits, we can apply small amounts of energy easily, with high frequenc
 
 #### Some additional quotes from Atomic Habits and thoughts:
 
-> "Every action you take is a vote for the type of person you wish to become. No single instance will transform your beliefs, but as the votes build up, so does the evidence of your new identity."
+> Every action you take is a vote for the type of person you wish to become. No single instance will transform your beliefs, but as the votes build up, so does the evidence of your new identity.
 
 So let's make *a lot of* votes! Frequency!
 
-> “Habits are the compound interest of self-improvement”
+> Habits are the compound interest of self-improvement
 
 Charlie Munger says “the first rule of compounding is to never interrupt it unnecessarily.”

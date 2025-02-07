@@ -45,8 +45,7 @@ defmodule Jwb.Blogs.Post do
   end
 
   defp parse_attr(:body, body) do
-    IO.inspect(body)
-    body |> Earmark.as_html!() |> Jwb.Blog.Highlighter.highlight_code_blocks()
+    body |> Earmark.as_html!() |> Jwb.Blogs.Highlighter.highlight_code_blocks()
   end
 
   defp parse_attr(:tags, value) do

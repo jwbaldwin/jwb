@@ -1,10 +1,9 @@
 ---
 category: SaaS App
-title: Kept
+name: Kept
 description: A customer engagement and insight platform for retailers
-cover: /img/kept-logo.png
-gallery:
-  - /img/kept-home.jpg
+cover: /images/kept-logo.png
+gallery: ["/images/kept-home.jpg"]
 position: 1
 ---
 [https://gokept.com](https://gokept.com)

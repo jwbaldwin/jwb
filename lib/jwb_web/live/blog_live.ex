@@ -1,7 +1,7 @@
 defmodule JwbWeb.BlogLive do
   use JwbWeb, :live_view
 
-  alias Jwb.Blog
+  alias Jwb.Blogs
 
   @impl true
   def mount(_params, _session, socket) do
@@ -10,12 +10,12 @@ defmodule JwbWeb.BlogLive do
 
   @impl true
   def handle_params(_, _, %{assigns: %{live_action: :index}} = socket) do
-    {:noreply, assign(socket, posts: Blog.list_posts())}
+    {:noreply, assign(socket, posts: Blogs.list_posts())}
   end
 
   @impl true
   def handle_params(%{"slug" => slug}, _, %{assigns: %{live_action: :show}} = socket) do
-    {:noreply, assign(socket, post: Blog.get_post(slug))}
+    {:noreply, assign(socket, post: Blogs.get_post(slug))}
   end
 
   @impl true
@@ -68,7 +68,15 @@ defmodule JwbWeb.BlogLive do
   def render(%{live_action: :show} = assigns) do
     ~H"""
     <article class="prose prose-invert">
+      <div class="-mt-10 mb-10">
+        <.back navigate={~p"/blog"}>back</.back>
+      </div>
+      <div class="flex justify-between items-center mb-4 gap-4">
+        <h1 class="text-lg pr-4 mb-0 text-zinc-600">{@post.title}</h1>
+        <div class="whitespace-nowrap text-zinc-700">{Calendar.strftime(@post.date, "%m/%d/%y")}</div>
+      </div>
       {raw(@post.body)}
+      <.back navigate={~p"/blog"}>back</.back>
     </article>
     """
   end

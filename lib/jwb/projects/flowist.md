@@ -1,11 +1,10 @@
 ---
 category: SaaS App
-title: Flowist
+name: Flowist
 description: A progress tracker for remote teams
-cover: /img/filled-logo.png
-gallery:
-  - /img/flowist-brand-slides.gif
-position: 2
+cover: /images/filled-logo.png
+gallery: ["/images/flowist-brand-slides.gif"]
+position: 4
 ---
 [https://flowist.io](https://flowist.io) [not actively developed]
 

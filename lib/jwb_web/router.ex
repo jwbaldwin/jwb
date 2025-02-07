@@ -23,8 +23,7 @@ defmodule JwbWeb.Router do
       live "/blog", BlogLive, :index
       live "/blog/:slug", BlogLive, :show
 
-      live "/projects", ProjectsLive, :index
-      live "/projects/:project", ProjectsLive, :show
+      live "/projects/:slug", ProjectsLive, :show
 
       live "/bookmarks", BookmarksLive, :index
       live "/things", ThingsLive, :index

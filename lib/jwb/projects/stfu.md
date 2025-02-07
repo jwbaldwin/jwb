@@ -1,11 +1,10 @@
 ---
 category: SaaS App
-title: Stfu.ai
+name: Stfu.ai
 description: A social event app enabling connections and coffee chats between busy friends.
-cover: /img/stfu-logo.png
-gallery:
-  - /img/stfu-og-image.png
-position: 1
+cover: /images/stfu-logo.png
+gallery: ["/images/stfu-og-image.png"]
+position: 2
 ---
 [https://stfu.ai](https://stfu.ai)
 

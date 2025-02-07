@@ -21,7 +21,7 @@ Alright, let's get right into it.
 We'll have two main components for this. The Vue component that will act as the dropdown, and the Vue component which will open the dropdown when clicked.
 
 The dropdown component will be pretty straight forward:
-```vue
+```js
 //MainDropdown.vue
 <template>
     <div>
@@ -47,7 +47,7 @@ export default {
 Okay! Nothing fancy going on here. A little [Vue slot](https://vuejs.org/v2/guide/components-slots.html) api usage, so that we can reuse this component for dropdowns all throughout the app! Basically, we're going to define what we want rendered in that *slot* in another component.
 
 So, let's scaffold the items we'll display!
-```vue
+```js
 //ButtonWithDropdown.vue
 <template>
   <main-dropdown>
@@ -93,7 +93,7 @@ Great, so it looks terrible *and* doesn't work. Let's fix the style with Tailwin
 
 ## Next: The Styling
 
-```vue
+```js
 //MainDropdown.vue
 <template>
   <div class="flex justify-center">
@@ -118,7 +118,7 @@ The div element with `fixed inset-0` will **cover the entire page**. Just rememb
 
 We're going to make sure the parent is "relative" so that we can position the child dropdown absolute in relation to that element. And then we apply some other positioning so that it sits where we want it to!
 
-```vue
+```js
 //ButtonWithDropdown.vue
 <template>
     <main-dropdown>
@@ -167,7 +167,7 @@ The `MainDropdown.vue` component, that we <slot> the button into, will allow the
 
 Let's see how that works!
 
-```vue
+```js
 //MainDropdown.vue
 <template>
     <div class="flex justify-center">
@@ -203,7 +203,7 @@ Okay so let's go over what we did here:
 
 Okay, the final touches!
 
-```vue
+```js
 //ButtonWithDropdown.vue
 <template>
     <main-dropdown>

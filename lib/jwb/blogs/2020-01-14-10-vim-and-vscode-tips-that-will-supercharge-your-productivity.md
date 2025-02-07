@@ -1,6 +1,6 @@
 ---
 slug: 10-vim-tips
-title: ⚡10 Vim + VSCode tips that will supercharge your productivity
+title: 10 Vim + VSCode tips that will supercharge your productivity
 description: How I develop faster with these quick Vim + VSCode tips
 tags: ["productivity", "vim"]
 ---

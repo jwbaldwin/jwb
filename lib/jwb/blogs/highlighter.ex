@@ -1,13 +1,25 @@
-defmodule Jwb.Blog.Highlighter do
+defmodule Jwb.Blogs.Highlighter do
   @moduledoc """
   Performs code highlighting.
   """
 
-  # If new lexers are available, add them here:
-  defp pick_language_and_lexer(""), do: {"elixir", Makeup.Lexers.ElixirLexer, []}
+  alias Makeup.Lexers.ElixirLexer
+  alias Makeup.Lexers.DiffLexer
+  alias Makeup.Lexers.JsonLexer
+  alias Makeup.Lexers.HTMLLexer
+  alias Makeup.Lexers.HEExLexer
+  alias Makeup.Lexers.JsLexer
+  alias Makeup.Registry
 
   defp pick_language_and_lexer(lang) do
-    case Makeup.Registry.fetch_lexer_by_name(lang) do
+    Registry.register_lexer(ElixirLexer, names: ["elixir", "iex"], extensions: ["ex", "exs"])
+    Registry.register_lexer(DiffLexer, names: ["diff", "git"], extensions: ["diff", "patch"])
+    Registry.register_lexer(JsonLexer, names: ["json"], extensions: ["json"])
+    Registry.register_lexer(HTMLLexer, names: ["html"], extensions: ["html"])
+    Registry.register_lexer(HEExLexer, names: ["heex", "html"], extensions: ["heex", "eex"])
+    Registry.register_lexer(JsLexer, names: ["js", "ts"], extensions: ["js", "ts"])
+
+    case Registry.fetch_lexer_by_name(lang) do
       {:ok, {lexer, opts}} ->
         {lang, lexer, opts}
 
@@ -47,7 +59,7 @@ defmodule Jwb.Blog.Highlighter do
         formatter_options: [highlight_tag: highlight_tag]
       )
 
-    ~s(<pre><code class="nohighlight makeup #{lang}">#{highlighted}</code></pre>)
+    ~s(<pre class="highlight makeup #{lang}"><code>#{highlighted}</code></pre>)
   end
 
   entities = [{"&amp;", ?&}, {"&lt;", ?<}, {"&gt;", ?>}, {"&quot;", ?"}, {"&#39;", ?'}]

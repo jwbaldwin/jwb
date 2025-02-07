@@ -27,7 +27,7 @@ defmodule JwbWeb.SidebarComponent do
           />
           <.nav_item
             current_url={@current_url}
-            path="/projects/space"
+            path="/projects/sphxace-invaders"
             icon="space"
             label="Space Invaders"
           />
