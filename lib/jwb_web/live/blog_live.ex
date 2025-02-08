@@ -10,12 +10,13 @@ defmodule JwbWeb.BlogLive do
 
   @impl true
   def handle_params(_, _, %{assigns: %{live_action: :index}} = socket) do
-    {:noreply, assign(socket, posts: Blogs.list_posts())}
+    {:noreply, assign(socket, posts: Blogs.list_posts(), page_title: "Writings")}
   end
 
   @impl true
   def handle_params(%{"slug" => slug}, _, %{assigns: %{live_action: :show}} = socket) do
-    {:noreply, assign(socket, post: Blogs.get_post(slug))}
+    post = Blogs.get_post(slug)
+    {:noreply, assign(socket, post: post, page_title: post.title)}
   end
 
   @impl true

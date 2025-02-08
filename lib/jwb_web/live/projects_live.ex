@@ -10,7 +10,9 @@ defmodule JwbWeb.ProjectsLive do
 
   @impl true
   def handle_params(%{"slug" => slug}, _, %{assigns: %{live_action: :show}} = socket) do
-    {:noreply, assign(socket, project: Projects.get_project(slug))}
+    project = Projects.get_project(slug)
+
+    {:noreply, assign(socket, project: project, page_title: project.name)}
   end
 
   @impl true
