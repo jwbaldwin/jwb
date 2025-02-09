@@ -27,7 +27,7 @@ defmodule JwbWeb.HomeLive do
           class="text-green-500 font-medium no-underline inline-flex items-center gap-1"
         >
           <.icon name="pen" class="w-3.5 h-3.5" /> learnings</.link>, <.link
-          navigate={~p"/projects"}
+          navigate={~p"/projects/rize"}
           class="text-green-500 font-medium no-underline inline-flex items-center gap-1"
         >
           <.icon name="rize" class="w-3.5 h-3.5" /> my failures</.link>, and the
