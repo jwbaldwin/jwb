@@ -13,19 +13,10 @@ defmodule JwbWeb.SidebarComponent do
     ~H"""
     <div class="md:hidden fixed top-4 left-12 z-50">
       <button
+        id="mobile-button"
         type="button"
         class="text-gray-200 hover:text-white"
-        class={[!@show_mobile_menu && "opacity-100", @show_mobile_menu && "opacity-0"]}
-        phx-click={
-          JS.toggle(
-            to: "#mobile-menu",
-            in:
-              {"transition-transform ease-in-out duration-300", "-translate-x-full", "translate-x-0"},
-            out:
-              {"transition-transform ease-in-out duration-300", "translate-x-0", "-translate-x-full"}
-          )
-          |> JS.toggle(to: "#mobile-backdrop")
-        }
+        phx-click={toggle_mobile_menu()}
       >
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
           <path
@@ -39,18 +30,15 @@ defmodule JwbWeb.SidebarComponent do
     </div>
     <div
       id="mobile-backdrop"
-      class="hidden md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-all duration-300"
-      phx-click={
-        JS.toggle(to: "#mobile-menu")
-        |> JS.toggle(to: "#mobile-backdrop")
-      }
+      class="hidden md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+      phx-click={toggle_mobile_menu()}
     >
     </div>
     <div
       id="mobile-menu"
       class={[
-        "fixed inset-y-0 left-0 z-40 w-[240px] md:translate-x-0 -translate-x-full",
-        "border-r border-[#2C2C2E] bg-[#161618] p-5 flex flex-col justify-between"
+        "fixed inset-y-0 left-0 z-40 w-2/3 mx-4 my-4 md:w-[240px] md:translate-x-0 md:block hidden",
+        "border border-[#2C2C2E] rounded-lg md:border-r md:border-[#2C2C2E] bg-[#161618] p-5 flex flex-col justify-between"
       ]}
     >
       <div class="mb-8 px-3">
@@ -130,7 +118,7 @@ defmodule JwbWeb.SidebarComponent do
         "flex items-center gap-2 rounded-md smooth-corners-sm px-3 py-2 transition-colors duration-200",
         if(@current_url.path == @path,
           do: "bg-[#323234] text-white",
-          else: "text-[#A1A1A6] hover:bg-[#1C1C1E]"
+          else: "text-[#A1A1A6] hover:bg-[#1E1E1C]"
         )
       ]}
     >
@@ -138,5 +126,24 @@ defmodule JwbWeb.SidebarComponent do
       <span>{@label}</span>
     </.link>
     """
+  end
+
+  def toggle_mobile_menu(js \\ %JS{}) do
+    js
+    |> JS.toggle(
+      to: "#mobile-menu",
+      in: {"transition-transform ease-in-out duration-300", "-translate-x-full", "translate-x-0"},
+      out: {"transition-transform ease-in-out duration-300", "translate-x-0", "-translate-x-full"}
+    )
+    |> JS.toggle(
+      to: "#mobile-backdrop",
+      in: {"transition-opacity ease-in-out duration-300", "opacity-0", "opacity-100"},
+      out: {"transition-opacity ease-in-out duration-300", "opacity-100", "opacity-0"}
+    )
+    |> JS.toggle(
+      to: "#mobile-button",
+      in: {"transition-opacity ease-in-out duration-300", "opacity-0", "opacity-100"},
+      out: {"transition-opacity ease-in-out duration-50", "opacity-100", "opacity-0"}
+    )
   end
 end
