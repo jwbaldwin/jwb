@@ -49,12 +49,12 @@ defmodule JwbWeb.BlogLive do
       <ul class="space-y-6">
         <li
           :for={post <- @posts}
-          class="p-5 transition duration-200 shadow-lg bg-zinc-900 smooth-corners-sm border-md hover:bg-zinc-800"
+          class="p-5 transition duration-200 shadow-lg bg-zinc-900 rounded-2xl border border-md border-[#2C2C2E] hover:bg-zinc-800"
         >
           <.link navigate={~p"/blog/#{post.slug}"} class="block">
-            <div class="flex items-center justify-between">
-              <h2 class="mb-2 text-sm font-medium text-zinc-100">{post.title}</h2>
-              <time class="text-sm text-zinc-500 whitespace-nowrap">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-2 sm:pb-0">
+              <h2 class="mb-1 sm:mb-2 text-sm font-medium text-zinc-100">{post.title}</h2>
+              <time class="text-xs text-zinc-500 whitespace-nowrap">
                 {Calendar.strftime(post.date, "%B %d, %Y")}
               </time>
             </div>

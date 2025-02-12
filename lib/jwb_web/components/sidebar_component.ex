@@ -11,19 +11,24 @@ defmodule JwbWeb.SidebarComponent do
     assigns = assign_new(assigns, :show_mobile_menu, fn -> false end)
 
     ~H"""
-    <div class="md:hidden fixed top-4 left-12 z-50">
+    <div class="md:hidden fixed top-4 left-8 sm:left-20 z-50">
       <button
         id="mobile-button"
         type="button"
         class="text-gray-200 hover:text-white"
         phx-click={toggle_mobile_menu()}
       >
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <svg
+          class="w-5 h-5 text-white hover:text-gray-200"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
+            d="M3 6H21M3 12H21M3 18H21"
+            stroke="currentColor"
+            stroke-width="1.5"
             stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            fill="currentColor"
           />
         </svg>
       </button>
@@ -37,12 +42,32 @@ defmodule JwbWeb.SidebarComponent do
     <div
       id="mobile-menu"
       class={[
-        "fixed inset-y-0 left-0 z-40 w-2/3 mx-4 my-4 md:w-[240px] md:translate-x-0 md:block hidden",
-        "border border-[#2C2C2E] rounded-lg md:border-r md:border-[#2C2C2E] bg-[#161618] p-5 flex flex-col justify-between"
+        "fixed inset-y-0 left-0 z-40 w-2/3 mx-4 my-4 md:w-[240px] md:translate-x-0 md:flex hidden",
+        "border border-[#2C2C2E] rounded-lg md:border-r bg-[#161618] p-5 flex-col justify-between"
       ]}
     >
-      <div class="mb-8 px-3">
+      <div class="mb-8 px-3 flex justify-between items-center">
         <h1 class="text-base font-medium text-white">James Baldwin</h1>
+        <button
+          type="button"
+          class="md:hidden text-gray-200 hover:text-white"
+          phx-click={toggle_mobile_menu()}
+        >
+          <svg
+            class="w-5 h-5 text-white hover:text-gray-200"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 18L12 12M18 6L14 10M6 6L12 12M18 18L12 12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
       </div>
 
       <nav class="space-y-1 flex-1">
@@ -79,11 +104,11 @@ defmodule JwbWeb.SidebarComponent do
           <p class="px-3 pb-2 text-xs font-medium text-gray-500 group-hover:text-gray-400 transition duration-200">
             Collections
           </p>
-          <.nav_item current_url={@current_url} path="/bookmarks" icon="bookmark" label="Bookmarks" />
-          <.nav_item current_url={@current_url} path="/things" icon="stack" label="Stack" />
+          <!-- <.nav_item current_url={@current_url} path="/bookmarks" icon="bookmark" label="Bookmarks" /> -->
+          <.nav_item current_url={@current_url} path="/things" icon="stack" label="Things" />
         </div>
       </nav>
-      <div class="bottom-0 flex w-full justify-center pb-4 gap-2">
+      <div class="bottom-0 flex w-full justify-center pb-4 gap-2 pt-4">
         <a href="https://x.com/jwbaldwin" class="text-zinc-500">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -118,7 +143,7 @@ defmodule JwbWeb.SidebarComponent do
         "flex items-center gap-2 rounded-md smooth-corners-sm px-3 py-2 transition-colors duration-200",
         if(@current_url.path == @path,
           do: "bg-[#323234] text-white",
-          else: "text-[#A1A1A6] hover:bg-[#1E1E1C]"
+          else: "text-[#A1A1A6] hover:bg-[#A1A1A6]/10"
         )
       ]}
     >

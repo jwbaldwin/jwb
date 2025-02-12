@@ -30,12 +30,12 @@ defmodule JwbWeb.HomeLive do
           navigate={~p"/projects/rize"}
           class="text-green-500 font-medium no-underline inline-flex items-center gap-1"
         >
-          <.icon name="rize" class="w-3.5 h-3.5" /> my failures</.link>, and the
+          <.icon name="rize" class="w-3.5 h-3.5" /> projects</.link>, and
         <.link
           navigate={~p"/things"}
           class="text-green-500 font-medium no-underline inline-flex items-center gap-1"
         >
-          <.icon name="stack" class="w-3.5 h-3.5" /> things
+          <.icon name="stack" class="w-3.5 h-3.5" /> my things
         </.link>
         I'm excited about.
       </p>
