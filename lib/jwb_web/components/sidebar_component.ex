@@ -139,8 +139,9 @@ defmodule JwbWeb.SidebarComponent do
     ~H"""
     <.link
       navigate={@path}
+      id={@label}
       class={[
-        "flex items-center gap-2 rounded-md px-3 py-2 transition-colors duration-200",
+        "flex items-center gap-2 rounded-md px-3 py-2 transition-colors duration-200 group/link",
         if(@current_url.path == @path,
           do: "bg-[#323234] text-white",
           else: "text-[#A1A1A6] hover:bg-[#A1A1A6]/10"

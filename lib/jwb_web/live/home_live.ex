@@ -9,9 +9,12 @@ defmodule JwbWeb.HomeLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <div class="prose prose-invert prose-p:text-gray-300 max-w-none mx-auto font-base">
+    <div class="prose prose-invert prose-p:text-gray-350 max-w-none mx-auto font-base">
       <p>
-        I'm James Baldwin, a father, husband, and software engineer. I'm currently working at <a
+        Hey, I'm James!
+      </p>
+      <p>
+        I'm a father, husband, and software engineer. I'm currently working at <a
           class="text-blue-500 font-medium no-underline"
           href="https://www.remote.com"
         >Remote</a>, which makes for a fun verbal mix-up each time I tell someone. I build the contractor payments platform.
@@ -35,9 +38,9 @@ defmodule JwbWeb.HomeLive do
           navigate={~p"/things"}
           class="text-green-500 font-medium no-underline inline-flex items-center gap-1"
         >
-          <.icon name="stack" class="w-3.5 h-3.5" /> my things
+          <.icon name="stack" class="w-3.5 h-3.5" /> things
         </.link>
-        I'm excited about.
+        I like.
       </p>
     </div>
     """
