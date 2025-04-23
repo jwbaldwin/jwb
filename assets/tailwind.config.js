@@ -7,6 +7,11 @@ const path = require("path");
 
 module.exports = {
   content: ["./js/**/*.js", "../lib/jwb_web.ex", "../lib/jwb_web/**/*.*ex"],
-  theme: {},
+  theme: {
+    fontFamily: {
+      sans: ['Geist Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      mono: ['Geist Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+    },
+  },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };
