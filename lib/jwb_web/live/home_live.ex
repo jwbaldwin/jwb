@@ -14,14 +14,19 @@ defmodule JwbWeb.HomeLive do
         Hey, I'm James!
       </p>
       <p>
-        I'm a father, husband, and software engineer. I'm currently working at <a
-          class="text-blue-500 font-medium no-underline"
-          href="https://www.remote.com"
-        >Remote</a>, which makes for a fun verbal mix-up each time I tell someone. I build the contractor payments platform.
+        I'm a father, husband, and software engineer. I'm currently working on AI at <a
+          class="text-orange-500 font-medium no-underline"
+          href="https://www.zapier.com"
+        >Zapier</a>,
+        building cool things.
       </p>
 
       <p>
-        Previously I've built products with a Co-founder, and before that I worked as a contractor.
+        Previously I built the contractor payments platform at
+        <a class="text-blue-500 font-medium no-underline" href="https://www.remote.com">Remote</a>
+        (which made for a fun verbal mix-up each time I told someone). Before that I built products with a Co-founder, and before
+        <em>that</em>
+        I worked as a contractor.
       </p>
 
       <p>
