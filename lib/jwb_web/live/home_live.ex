@@ -18,13 +18,13 @@ defmodule JwbWeb.HomeLive do
           class="text-orange-500 font-medium no-underline"
           href="https://www.zapier.com"
         >Zapier</a>,
-        building cool things.
+        working hard, building cool stuff.
       </p>
 
       <p>
         Previously I built the contractor payments platform at
         <a class="text-blue-500 font-medium no-underline" href="https://www.remote.com">Remote</a>
-        (which made for a fun verbal mix-up each time I told someone). Before that I built products with a Co-founder, and before
+        . Before that I built products with a Co-founder, and before
         <em>that</em>
         I worked as a contractor.
       </p>

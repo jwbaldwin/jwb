@@ -13,10 +13,16 @@ defmodule JwbWeb.ThingsLive do
            image: "/images/things/moonlander.png"
          },
          %{
+           name: "Cyboard Imprint",
+           description:
+             "A made-to-measure ergonomic keyboard a built-in trackball. Added HMX Cheese switches. Feels incredible and a joy to type on.",
+           image: "/images/things/cyboard_imprint.webp"
+         },
+         %{
            name: "Grovemade Headphone stand",
            description:
              "Walnut all the things! It's a truly beautiful piece of desk decor. I enjoy the craft that clearly went into it. Though I wish it never collected dust.",
-           image: "/images/things/headphone_stand.jpeg"
+           image: "/images/things/headphone_stand.webp"
          }
        ],
        edc_items: [
@@ -24,13 +30,13 @@ defmodule JwbWeb.ThingsLive do
            name: "Apple Watch Ultra",
            description:
              "I wasn't much of a watch user for a few reasions. But once I had my son, I realized I really needed a way to avoid being on my phone.",
-           image: "/images/things/apple_watch_ultra.jpeg"
+           image: "/images/things/apple_watch_ultra.webp"
          },
          %{
            name: "Spyderco PM3",
            description:
              "With the amount of boxes I open, it's extremely handy to have a lightweight knife on me at all times.",
-           image: "/images/things/knife.jpeg"
+           image: "/images/things/knife.webp"
          }
        ]
      )}
@@ -56,7 +62,7 @@ defmodule JwbWeb.ThingsLive do
             <%= for item <- @workspace_items do %>
               <div class="bg-[#1C1C1E] rounded-lg overflow-hidden">
                 <div class="aspect-w-16 aspect-h-9">
-                  <img src={item.image} alt={item.name} class="object-contain w-full h-40 bg-white" />
+                  <img src={item.image} alt={item.name} class="object-contain w-full h-40 bg-black" />
                 </div>
                 <div class="p-4">
                   <h3 class="text-lg font-semibold mb-2">{item.name}</h3>
@@ -73,7 +79,7 @@ defmodule JwbWeb.ThingsLive do
             <%= for item <- @edc_items do %>
               <div class="bg-[#1C1C1E] rounded-lg overflow-hidden">
                 <div class="aspect-w-16 aspect-h-9">
-                  <img src={item.image} alt={item.name} class="object-contain w-full h-40 bg-white" />
+                  <img src={item.image} alt={item.name} class="object-contain w-full h-40 bg-black" />
                 </div>
                 <div class="p-4">
                   <h3 class="text-lg font-semibold mb-2">{item.name}</h3>
