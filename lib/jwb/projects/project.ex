@@ -8,7 +8,7 @@ defmodule Jwb.Projects.Project do
           description: String.t(),
           category: String.t(),
           cover: String.t(),
-          gallery: [String.t()],
+          gallery: [%{String.t() => String.t() | pos_integer()}],
           position: integer(),
           body: String.t()
         }
@@ -25,7 +25,6 @@ defmodule Jwb.Projects.Project do
     [frontmatter, body] = String.split(contents, "\n---\n", parts: 2)
     details = String.trim_leading(frontmatter, "---\n")
 
-    # Parse details into key-value pairs
     detail_pairs =
       details
       |> String.split("\n")
@@ -48,6 +47,8 @@ defmodule Jwb.Projects.Project do
   defp parse_attr(:gallery, value) do
     Jason.decode!(value)
   end
+
+  defp parse_attr(:position, value), do: String.to_integer(value)
 
   defp parse_attr(_, value), do: String.trim(value)
 end

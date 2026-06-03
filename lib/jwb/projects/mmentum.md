@@ -1,33 +1,21 @@
 ---
-category: SaaS App
+category: Habit tracking
 name: Mmentum
-description: Mmentum is an app that helps me build habits by keeping momentum!
+description: A focused habit tracker built around small, repeated steps.
 cover: /images/mmentum.png
-gallery: ["/images/og_image.png"]
+gallery: [{"src":"/images/og_image.png","alt":"Mmentum brand artwork reading A better way to build habits","caption":"The product's focus: building habits through small steps and consistent momentum.","width":1200,"height":627}]
 position: 3
 ---
-[https://mmentum.io](https://www.mmentum.io) [not actively developed]
+## A smaller commitment
 
-### What is it?
-> “All big things come from small beginnings. The seed of every habit is a single, tiny decision. But as that decision is repeated, a habit sprouts and grows stronger.”\
-> ― James Clear, Atomic Habits
+Mmentum grew out of wanting a simple way to track and build my own habits. The idea was to focus on small steps repeated over time, rather than a large commitment made all at once.
 
-</br>
+## Keeping the scope focused
 
-In this same vein of thinking, Mmentum is an application that helps me track and build my habits.
+The app centered on habit tracking and incremental progress. That narrow focus was the product: a clean, simple way to keep working toward a habit.
 
-It is dead-simple, clean, and only focused on helping people take small steps toward who they want to be. It helps you build up that incremental momentum towards the person you want to be
+## Building with LiveView
 
-### Tech Stack
+I used Elixir, Phoenix, LiveView, and Tailwind CSS. Working with Elixir and Phoenix had a large impact on how much I enjoyed developing the app.
 
-I'm using the PETAL stack for this. Working with this stack (Elixir/Phoenix specifically) has had the largest impact on my developer happiness.
-
-If you haven't given this stack (Or just Elixir) a try, do it! And tell me when you do! 
-
-P - Phoenix
-
-E - Elixir
-
-T - TailwindCSS
-
-L - LiveView
+Mmentum is no longer actively developed. The [original product site](https://www.mmentum.io) describes the idea in more detail.

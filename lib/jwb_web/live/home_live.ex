@@ -15,17 +15,18 @@ defmodule JwbWeb.HomeLive do
       </p>
       <p>
         I'm a father, husband, and software engineer. I'm currently working on AI at <a
-          class="text-orange-500 font-medium no-underline"
+          class="company-mention text-orange-500 font-medium no-underline"
           href="https://www.zapier.com"
-        >Zapier</a>,
+        ><img src={~p"/images/companies/zapier.svg"} width="18" height="18" alt="" /><span>Zapier</span></a>,
         working hard, building cool stuff.
       </p>
 
       <p>
-        Previously I built the contractor payments platform at
-        <a class="text-blue-500 font-medium no-underline" href="https://www.remote.com">Remote</a>
-        . Before that I built products with a Co-founder, and before
-        <em>that</em>
+        Previously, I built the contractor payments platform at <a
+          class="company-mention text-blue-500 font-medium no-underline"
+          href="https://www.remote.com"
+        ><img src={~p"/images/companies/remote.svg"} width="18" height="18" alt="" /><span>Remote</span></a>.
+        Before that I built products with a Co-founder, and before <em>that</em>
         I worked as a contractor.
       </p>
 
@@ -35,10 +36,10 @@ defmodule JwbWeb.HomeLive do
           class="text-green-500 font-medium no-underline inline-flex items-center gap-1"
         >
           <.icon name="pen" class="w-3.5 h-3.5" /> learnings</.link>, <.link
-          navigate={~p"/projects/rize"}
+          navigate={~p"/projects"}
           class="text-green-500 font-medium no-underline inline-flex items-center gap-1"
         >
-          <.icon name="rize" class="w-3.5 h-3.5" /> projects</.link>, and
+          <.icon name="stack" class="w-3.5 h-3.5" /> projects</.link>, and
         <.link
           navigate={~p"/things"}
           class="text-green-500 font-medium no-underline inline-flex items-center gap-1"

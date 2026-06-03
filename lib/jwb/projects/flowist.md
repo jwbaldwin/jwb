@@ -1,30 +1,23 @@
 ---
-category: SaaS App
+category: Remote teamwork
 name: Flowist
-description: A progress tracker for remote teams
+description: Shared progress, check-ins, and announcements for distributed teams.
 cover: /images/filled-logo.png
-gallery: ["/images/flowist-brand-slides.gif"]
+gallery: [{"src":"/images/3.png","alt":"Flowist team announcement with a Mark as seen action","caption":"Team announcements made shared updates visible alongside a check-out action.","width":1920,"height":1080},{"src":"/images/4.png","alt":"Flowist dashboard with community switching and a list of teams","caption":"The interface grouped teams within communities, with navigation between them.","width":1920,"height":1080}]
 position: 4
 ---
-[https://flowist.io](https://flowist.io) [not actively developed]
+## Keeping a team informed
 
-### What is it?
+Flowist was a progress tracker for distributed teams. It gave teammates a place to share what they were working on and stay aware of each other's activity.
 
-The progress tracker for remote teams. Built for distributed and remote teams, helping them state informed and aligned in the modern team environment. See it here: [flowist.io](https://flowist.io) 
+The interface brought together check-ins, team announcements, and navigation across multiple communities.
 
-The app received 10 users on the free tier, and 2 users on the paid tier.
+## Changing the frontend
 
-### Tech Stack
+The API used Elixir and Phoenix. I initially built the frontend with React and Redux, then migrated it to Vue and Vuex, with Tailwind CSS for styling.
 
-**API**: Elixir and Phoenix
+Vue offered a simpler development experience for me, with a more guided set of choices. That preference shaped the frontend migration.
 
-I can't say enough about this language and framework. It truly "10x'd" my development speed. I'm an avid Elixir and Phoenix fan.
+## In use
 
-For learning Elixir/Phoenix my recomendations are:
-
-* [Elixir in Action by Sasa Juric](https://www.manning.com/books/elixir-in-action)
-* [Programming Phoenix by Chris McCord, Bruce Tate and Jose Valim](https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/)
-
-**Frontend**: Vue + Tailwindcss
-
-Vue gives me a simpler development experience than React, taking more of a "batteries included/blessed" approach. I previously wrote the frontend in React/Redux but migrated to Vue/Vuex later. All styling is done with Tailwindcss.
+The app reached 10 users on the free tier and 2 users on the paid tier. Flowist is no longer actively developed.
