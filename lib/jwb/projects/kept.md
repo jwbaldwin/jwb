@@ -2,7 +2,7 @@
 category: Retail analytics
 name: Kept
 description: Turning Shopify data into customer insights and practical next steps for retailers.
-cover: /images/kept-logo.png
+cover: /images/projects/kept.png
 gallery: [{"src":"/images/kept-home.jpg","alt":"Kept briefing with customer spending, product trends, and suggested next steps","caption":"The briefing pairs each insight with a next step, such as rewarding customers or restocking a popular product.","width":1600,"height":900}]
 position: 1
 ---

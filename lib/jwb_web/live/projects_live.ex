@@ -33,7 +33,7 @@ defmodule JwbWeb.ProjectsLive do
       <ul class="projects-list">
         <li :for={project <- @projects}>
           <.link navigate={~p"/projects/#{project.slug}"} class="project-entry">
-            <span class={["project-mark", project.slug == "mmentum" && "project-mark--light"]}>
+            <span class="project-mark">
               <img src={project.cover} alt="" width="48" height="48" />
             </span>
             <span class="project-entry-copy">
@@ -55,7 +55,7 @@ defmodule JwbWeb.ProjectsLive do
       <.link navigate={~p"/projects"} class="project-back">← All projects</.link>
       <header class="project-header">
         <div class="project-heading">
-          <span class={["project-mark", @project.slug == "mmentum" && "project-mark--light"]}>
+          <span class="project-mark">
             <img src={@project.cover} alt="" width="48" height="48" />
           </span>
           <div>

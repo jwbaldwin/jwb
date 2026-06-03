@@ -2,7 +2,7 @@
 category: iOS marketplace
 name: Rize
 description: Connecting viral trends with small business participation in an iOS app.
-cover: /images/rize.svg
+cover: /images/projects/rize.svg
 gallery: []
 position: 6
 ---

@@ -2,7 +2,7 @@
 category: Habit tracking
 name: Mmentum
 description: A focused habit tracker built around small, repeated steps.
-cover: /images/mmentum.png
+cover: /images/projects/mmentum.png
 gallery: [{"src":"/images/og_image.png","alt":"Mmentum brand artwork reading A better way to build habits","caption":"The product's focus: building habits through small steps and consistent momentum.","width":1200,"height":627}]
 position: 3
 ---

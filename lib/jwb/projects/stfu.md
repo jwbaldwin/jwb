@@ -2,7 +2,7 @@
 category: Social planning
 name: STFU.ai
 description: Phone-number sign-in and shareable invitations for making plans with a friend.
-cover: /images/stfu-logo.png
+cover: /images/projects/stfu.png
 gallery: [{"src":"/images/stfu-og-image.png","alt":"STFU brand artwork with two coffee cups and the phrase let's rendez-vous","caption":"The coffee-chat identity. This is brand artwork, rather than a screenshot of the app.","width":1200,"height":630}]
 position: 2
 ---
