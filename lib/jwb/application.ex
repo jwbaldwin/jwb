@@ -9,7 +9,6 @@ defmodule Jwb.Application do
   def start(_type, _args) do
     children = [
       JwbWeb.Telemetry,
-      Jwb.Repo,
       {DNSCluster, query: Application.get_env(:jwb, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Jwb.PubSub},
       # Start the Finch HTTP client for sending emails

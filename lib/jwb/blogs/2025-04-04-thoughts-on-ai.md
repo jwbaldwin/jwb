@@ -1,6 +1,6 @@
 ---
 slug: thoughts-on-ai-april-4
-title: Thoughts on AI - April 4th, '25
+title: Thoughts on AI - June 2nd, '26
 description: A collection of my disjointed and current thoughts on AI as it stands today
 tags: ["ai", "musings"]
 ---
@@ -50,3 +50,13 @@ I'm writing this as much for myself as for anyone else. It's simply a snapshot o
     * The second part does a lot of the heavy lifting on usefulness and thus: coding
 
 These are just snapshots, of course. Ask me again in six months, and some of these opinions will likely have shifted again. That's the nature of working with something evolving so quickly.
+
+## Updated opinions as of June 2nd, 2026
+* Model training has much work to do still, but our tooling will be the source of more gains than models
+* AI is effective enough to be believed as an excuse for firing in many cases where it is not 
+* The incentives for AI adoption are causing the "bubble" and we won't see the true value of ai for
+many years even if it plateaued today.
+* You still need to read the code.
+* Peak efficiency and productivity was dumb supermaven/cursor tab and an AI chat on the side.
+    * trying to be as dialed into the system you're building, and being produ of it, is acutally HARDER now than ever and takes more and more intentionality
+

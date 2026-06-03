@@ -6,13 +6,12 @@ cover: /images/stfu-logo.png
 gallery: ["/images/stfu-og-image.png"]
 position: 2
 ---
-[https://stfu.ai](https://stfu.ai)
 
 ### What is it?
 
-An app that enables seamless event planning and coordination between two parties. Built ontop of Twilio's api, login with just your phone number and quickly create a shareable event for one of your friends.
+An webapp like partiful that enables seamless event planning and coordination between two parties. Built ontop of Twilio's api, login with just your phone number and quickly create a shareable event for one of your friends.
 
-This application is currently seeing usage, mainly in NYC.
+This application saw some usage, mainly in NYC.
 
 ### Tech Stack
 
