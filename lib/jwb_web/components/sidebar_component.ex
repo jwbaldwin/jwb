@@ -74,32 +74,7 @@ defmodule JwbWeb.SidebarComponent do
         <.nav_item current_url={@current_url} path="/" icon="home" label="Home" />
         <.nav_item current_url={@current_url} path="/blog" icon="pencil" label="Writing" />
 
-        <div class="pt-8 group">
-          <p class="px-3 pb-2 text-xs font-medium text-gray-500 group-hover:text-gray-400 transition duration-200">
-            Projects
-          </p>
-          <.nav_item current_url={@current_url} path="/projects/kept" icon="kept" label="Kept" />
-          <.nav_item current_url={@current_url} path="/projects/stfu" icon="stfu" label="STFU.ai" />
-          <.nav_item
-            current_url={@current_url}
-            path="/projects/mmentum"
-            icon="mmentum"
-            label="Mmentum"
-          />
-          <.nav_item
-            current_url={@current_url}
-            path="/projects/sphxace-invaders"
-            icon="space"
-            label="Space Invaders"
-          />
-          <.nav_item
-            current_url={@current_url}
-            path="/projects/flowist"
-            icon="flowist"
-            label="Flowist"
-          />
-          <.nav_item current_url={@current_url} path="/projects/rize" icon="rize" label="Rize" />
-        </div>
+        <.nav_item current_url={@current_url} path="/projects" icon="stack" label="Projects" />
         <div class="pt-8 group">
           <p class="px-3 pb-2 text-xs font-medium text-gray-500 group-hover:text-gray-400 transition duration-200">
             Collections
@@ -136,13 +111,23 @@ defmodule JwbWeb.SidebarComponent do
   attr :label, :string, required: true
 
   def nav_item(assigns) do
+    assigns =
+      assign(
+        assigns,
+        :active,
+        assigns.current_url.path == assigns.path or
+          (assigns.path == "/projects" and
+             String.starts_with?(assigns.current_url.path, "/projects/"))
+      )
+
     ~H"""
     <.link
       navigate={@path}
       id={@label}
+      aria-current={if @active, do: "page"}
       class={[
         "flex items-center gap-2 rounded-md px-3 py-2 transition-colors duration-200 group/link",
-        if(@current_url.path == @path,
+        if(@active,
           do: "bg-[#323234] text-white",
           else: "text-[#A1A1A6] hover:bg-[#A1A1A6]/10"
         )

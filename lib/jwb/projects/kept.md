@@ -1,27 +1,25 @@
 ---
-category: SaaS App
+category: Retail analytics
 name: Kept
-description: A customer engagement and insight platform for retailers
+description: Turning Shopify data into customer insights and practical next steps for retailers.
 cover: /images/kept-logo.png
-gallery: ["/images/kept-home.jpg"]
+gallery: [{"src":"/images/kept-home.jpg","alt":"Kept briefing with customer spending, product trends, and suggested next steps","caption":"The briefing pairs each insight with a next step, such as rewarding customers or restocking a popular product.","width":1600,"height":900}]
 position: 1
 ---
-[https://gokept.com](https://gokept.com) [not actively developed]
+## The product
 
-### What is it?
+Kept helped retailers find valuable customers, spot product trends, and identify opportunities to bring customers back. It connected to Shopify and turned store activity into reports and suggested actions.
 
-An app for retailers that provides insights and engagement oppurtunities to customers. Integrates with Shopify to analyze and detect valuable cukstomers, popular items, trends, and ways to engage in a quick and impactful way to drive repeat customers and increase brand loyalty.
+The briefing put the insight and the next step side by side: who was spending, what was selling, and how a retailer could respond.
 
-### Details
+## Keeping reports fast
 
-The nitty gritty behind Kept was the sync between Shopify data and the app. We would do a full sync when they onboarded
-and then we would do a delta sync every few hours or upon request. Then each morning we'd fire off a bunch of cron jobs that would analyze then data and build reports. These reports were then stored so that when a customer came in they could see the reports
-instantly rather than putting out database under heavy load.
+The core engineering work was synchronizing Shopify data. We ran a full sync when a store joined, then delta syncs every few hours or on request.
 
-### Tech Stack
+Each morning, scheduled jobs analyzed the data and stored the reports. Customers could open a prepared report instead of triggering expensive queries while they waited. The reports reflected the sync and processing schedule rather than live calculations.
 
-- Elixir/Phoenix backend
-- Phoenix LiveView
-- Later migrated to Nextjs/Tailwindcss frontend
-- Shopify integration
+## Built with
 
+Elixir, Phoenix, and Shopify integration. The interface started in Phoenix LiveView and later moved to Next.js and Tailwind CSS.
+
+Kept is no longer actively developed.

@@ -1,17 +1,21 @@
 ---
-category: Game
+category: LiveView experiment
 name: Sphxace Invaders
-description: A Space Invaders-type game implemented using Phoenix LiveView to showcase the performance of the Phoenix Channels API over a network
+description: A server-driven arcade game exploring how far LiveView could go.
 cover: /images/screen-shot-2021-05-01-at-8.47.40-pm.png
-gallery: ["/images/screen-shot-2021-05-01-at-8.48.27-pm.png"]
+gallery: [{"src":"/images/screen-shot-2021-05-01-at-8.48.27-pm.png","alt":"Space Invaders game beside browser developer tools showing ship positions in the DOM","caption":"The game alongside its DOM updates. Open the image to inspect the ship positions at full size.","width":1190,"height":520}]
 position: 5
 ---
-### What is it?
+## A game as an experiment
 
-This was a recreation of the famous Space Invaders game, but using only Phoenix LiveView, which was very new at the time. The entirety of this game is written in Phoenix Liveview with **0 lines of JavaScript**!
+I recreated Space Invaders in Phoenix LiveView to explore its limits for a fast-changing, interactive interface. LiveView was still new at the time, and a game offered a different test from a typical web app.
 
-The game "tick" speed is 50ms, which means every 50ms Phoenix LiveView is updating all of the folowing: enemy ship posisitions, user ship position, projectile position, detectingand displaying colision with projectiles. No code (written by me) runs on the client.
+## A 50-millisecond game loop
 
-This was written as a test to see what the boundaries of Phoenix LiveView/Websockets might be. I have not found it yet :)
+Every 50 milliseconds, the game updated enemy ships, the player's ship, and projectiles, then detected and displayed collisions.
 
-Here are some screen shots of the updates happening in the dev panel (insane!):
+I wrote the game logic in LiveView, with no custom JavaScript running on the client. LiveView handled the browser updates over its connection to the server.
+
+## What it demonstrates
+
+The experiment put game state and collision detection on the server while the browser displayed the changes.
