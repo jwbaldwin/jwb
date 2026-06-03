@@ -2,7 +2,7 @@
 category: Remote teamwork
 name: Flowist
 description: Shared progress, check-ins, and announcements for distributed teams.
-cover: /images/filled-logo.png
+cover: /images/projects/flowist.png
 gallery: [{"src":"/images/3.png","alt":"Flowist team announcement with a Mark as seen action","caption":"Team announcements made shared updates visible alongside a check-out action.","width":1920,"height":1080},{"src":"/images/4.png","alt":"Flowist dashboard with community switching and a list of teams","caption":"The interface grouped teams within communities, with navigation between them.","width":1920,"height":1080}]
 position: 4
 ---
