@@ -4,12 +4,7 @@
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
 
-# General application configuration
 import Config
-
-config :jwb,
-  ecto_repos: [Jwb.Repo],
-  generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
 config :jwb, JwbWeb.Endpoint,

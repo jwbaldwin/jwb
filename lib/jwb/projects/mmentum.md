@@ -6,7 +6,7 @@ cover: /images/mmentum.png
 gallery: ["/images/og_image.png"]
 position: 3
 ---
-[https://mmentum.io](https://www.mmentum.io)
+[https://mmentum.io](https://www.mmentum.io) [not actively developed]
 
 ### What is it?
 > “All big things come from small beginnings. The seed of every habit is a single, tiny decision. But as that decision is repeated, a habit sprouts and grows stronger.”\
