@@ -1,6 +1,8 @@
 defmodule JwbWeb.HomeLive do
   use JwbWeb, :live_view
 
+  import JwbWeb.NavigationIcon, only: [navigation_icon: 1]
+
   @impl true
   def mount(_params, _session, socket) do
     {:ok, socket}
@@ -33,18 +35,18 @@ defmodule JwbWeb.HomeLive do
       <p>
         This is where I share my <.link
           navigate={~p"/blog"}
-          class="text-green-500 font-medium no-underline inline-flex items-center gap-1"
+          class="navigation-link navigation-link--inline text-green-500 font-medium no-underline"
         >
-          <.icon name="pen" class="w-3.5 h-3.5" /> learnings</.link>, <.link
+          <.navigation_icon name="writing" /><span class="navigation-label">learnings</span></.link>, <.link
           navigate={~p"/projects"}
-          class="text-green-500 font-medium no-underline inline-flex items-center gap-1"
+          class="navigation-link navigation-link--inline text-green-500 font-medium no-underline"
         >
-          <.icon name="stack" class="w-3.5 h-3.5" /> projects</.link>, and
+          <.navigation_icon name="projects" /><span class="navigation-label">projects</span></.link>, and
         <.link
           navigate={~p"/things"}
-          class="text-green-500 font-medium no-underline inline-flex items-center gap-1"
+          class="navigation-link navigation-link--inline text-green-500 font-medium no-underline"
         >
-          <.icon name="stack" class="w-3.5 h-3.5" /> things
+          <.navigation_icon name="things" /><span class="navigation-label">things</span>
         </.link>
         I like.
       </p>

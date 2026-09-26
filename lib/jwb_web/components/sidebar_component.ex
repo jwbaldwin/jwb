@@ -1,7 +1,7 @@
 defmodule JwbWeb.SidebarComponent do
   use Phoenix.Component
 
-  import JwbWeb.CoreComponents, only: [icon: 1]
+  import JwbWeb.NavigationIcon, only: [navigation_icon: 1]
 
   alias Phoenix.LiveView.JS
 
@@ -15,6 +15,7 @@ defmodule JwbWeb.SidebarComponent do
       <button
         id="mobile-button"
         type="button"
+        aria-label="Open navigation"
         class="text-gray-200 hover:text-white"
         phx-click={toggle_mobile_menu()}
       >
@@ -50,6 +51,7 @@ defmodule JwbWeb.SidebarComponent do
         <h1 class="text-base font-medium text-white">James Baldwin</h1>
         <button
           type="button"
+          aria-label="Close navigation"
           class="md:hidden text-gray-200 hover:text-white"
           phx-click={toggle_mobile_menu()}
         >
@@ -72,15 +74,15 @@ defmodule JwbWeb.SidebarComponent do
 
       <nav class="space-y-1 flex-1">
         <.nav_item current_url={@current_url} path="/" icon="home" label="Home" />
-        <.nav_item current_url={@current_url} path="/blog" icon="pencil" label="Writing" />
+        <.nav_item current_url={@current_url} path="/blog" icon="writing" label="Writing" />
 
-        <.nav_item current_url={@current_url} path="/projects" icon="stack" label="Projects" />
+        <.nav_item current_url={@current_url} path="/projects" icon="projects" label="Projects" />
         <div class="pt-8 group">
           <p class="px-3 pb-2 text-xs font-medium text-gray-500 group-hover:text-gray-400 transition duration-200">
             Collections
           </p>
           <!-- <.nav_item current_url={@current_url} path="/bookmarks" icon="bookmark" label="Bookmarks" /> -->
-          <.nav_item current_url={@current_url} path="/things" icon="stack" label="Things" />
+          <.nav_item current_url={@current_url} path="/things" icon="things" label="Things" />
         </div>
       </nav>
       <div class="bottom-0 flex w-full justify-center pb-4 gap-2 pt-4">
@@ -126,15 +128,15 @@ defmodule JwbWeb.SidebarComponent do
       id={@label}
       aria-current={if @active, do: "page"}
       class={[
-        "flex items-center gap-2 rounded-md px-3 py-2 transition-colors duration-200 group/link",
+        "navigation-link flex items-center gap-2 rounded-md px-3 py-2 transition-colors duration-200 group/link",
         if(@active,
           do: "bg-[#323234] text-white",
           else: "text-[#A1A1A6] hover:bg-[#A1A1A6]/10"
         )
       ]}
     >
-      <.icon name={@icon} class="w-3.5 h-3.5" />
-      <span>{@label}</span>
+      <.navigation_icon name={@icon} />
+      <span class="navigation-label">{@label}</span>
     </.link>
     """
   end

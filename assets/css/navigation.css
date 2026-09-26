@@ -1,0 +1,83 @@
+.navigation-icon {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  align-self: center;
+}
+
+.navigation-link--inline {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25em;
+  padding: 0 0.12em;
+  border-radius: 0.2em;
+  white-space: nowrap;
+}
+
+.navigation-link--inline:hover .navigation-label,
+.navigation-link:focus-visible .navigation-label {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.navigation-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.navigation-ink {
+  opacity: 0;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .navigation-icon :is(.navigation-stack-top, .navigation-stack-middle, .navigation-book-first, .navigation-book-middle, .navigation-book-last) {
+    transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .navigation-pen {
+    transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .navigation-ink {
+    transition: stroke-dashoffset 200ms cubic-bezier(0.23, 1, 0.32, 1), opacity 120ms ease;
+  }
+
+  .navigation-book-first {
+    transform-origin: 5px 20px;
+  }
+
+  .navigation-book-last {
+    transform-origin: 19px 20px;
+  }
+
+  .navigation-link:hover .navigation-pen {
+    transform: translate(1px, 0.5px);
+  }
+
+  .navigation-link:hover .navigation-ink {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+
+  .navigation-link:hover .navigation-stack-top {
+    transform: translateY(-1.5px);
+  }
+
+  .navigation-link:hover .navigation-stack-middle {
+    transform: translateY(-0.5px);
+  }
+
+  .navigation-link:hover .navigation-book-first {
+    transform: rotate(-8deg);
+  }
+
+  .navigation-link:hover .navigation-book-middle {
+    transform: translateY(-1px);
+  }
+
+  .navigation-link:hover .navigation-book-last {
+    transform: rotate(8deg);
+  }
+}
