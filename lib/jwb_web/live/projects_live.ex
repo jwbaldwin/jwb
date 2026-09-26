@@ -32,7 +32,11 @@ defmodule JwbWeb.ProjectsLive do
       </header>
       <ul class="projects-list">
         <li :for={project <- @projects}>
-          <.link navigate={~p"/projects/#{project.slug}"} class="project-entry">
+          <.link
+            navigate={~p"/projects/#{project.slug}"}
+            class="project-entry"
+            data-project={project.slug}
+          >
             <span class="project-mark">
               <img src={project.cover} alt="" width="48" height="48" />
             </span>
