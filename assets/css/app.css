@@ -117,8 +117,19 @@
 .project-category { color: #a1a1aa; font-size: .75rem; line-height: 1.5; }
 .project-entry .project-category { margin-top: .3rem; color: #a1a1aa; }
 .project-entry-arrow { color: #71717a; font-size: 1rem; }
-.project-entry:hover .project-entry-title, .project-entry:hover .project-entry-arrow { color: #86efac; }
-.projects-page a:focus-visible { outline: 2px solid #86efac; outline-offset: 5px; border-radius: 3px; }
+.project-entry[data-project="kept"] { --project-accent: #c47622; }
+.project-entry[data-project="stfu"] { --project-accent: #6262ff; }
+.project-entry[data-project="mmentum"] { --project-accent: #e4e4e7; }
+.project-entry[data-project="flowist"] { --project-accent: #5267f6; }
+.project-entry[data-project="sphxace-invaders"] { --project-accent: #16ca45; --project-arrow-accent: #e3a92a; }
+.project-entry[data-project="rize"] { --project-accent: #ef2b7c; }
+.project-entry:focus-visible .project-entry-title { color: var(--project-accent); }
+.project-entry:focus-visible .project-entry-arrow { color: var(--project-arrow-accent, var(--project-accent)); }
+@media (hover: hover) and (pointer: fine) {
+  .project-entry:hover .project-entry-title { color: var(--project-accent); }
+  .project-entry:hover .project-entry-arrow { color: var(--project-arrow-accent, var(--project-accent)); }
+}
+.projects-page a:focus-visible { outline: 2px solid var(--project-accent, #e4e4e7); outline-offset: 5px; border-radius: 3px; }
 .project-back { color: #a1a1aa; font-size: .875rem; text-decoration: none; }
 .project-back:hover { color: #fafafa; }
 .project-header { margin: 2rem 0; }
