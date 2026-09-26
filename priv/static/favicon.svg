@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges" role="img" aria-label="Silver Phosphor · underlined dotless j">
+  <path fill="#37424a" d="M2 2h12v1h1v10h-1v1H2v-1H1V3h1Z" />
+  <path fill="#bbc6ce" d="M2 3h12v10H2Z" />
+  <path fill="#f2f6f8" d="M2 3h12v1H3v8H2Z" />
+  <path fill="#7f8c96" d="M13 4h1v9H2v-1h11Z" />
+  <path fill="#10251b" d="M3 4h10v8H3Z" />
+  <path fill="#65ff87" d="M4 6h1v1H4ZM5 7h1v1H5ZM4 8h1v1H4Z" />
+  <path fill="#65ff87" d="M9 5h1v3H9v1H7V7h1v1h1Z" />
+  <path fill="#65ff87" d="M7 10h3v1H7Z" />
+</svg>
