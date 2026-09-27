@@ -1,0 +1,101 @@
+:root {
+  --type-title: 1.875rem;
+  --type-body: 1rem;
+  --type-list: 1rem;
+  --type-metadata: 0.875rem;
+  --text-heading: #f4f4f5;
+  --text-body: #d4d4d8;
+  --text-muted: #a1a1aa;
+}
+
+.site-main {
+  flex: 1;
+  min-width: 0;
+  padding: 5rem 2rem;
+}
+
+.site-content {
+  width: 100%;
+  max-width: 34rem;
+  margin-inline: auto;
+  color: var(--text-body);
+  font-size: var(--type-body);
+  line-height: 1.75;
+}
+
+.page-header {
+  margin-bottom: 2.5rem;
+}
+
+.page-title {
+  margin: 0;
+  color: var(--text-heading);
+  font-size: var(--type-title);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.page-intro {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+  font-size: var(--type-body);
+  line-height: 1.75;
+}
+
+.page-illustration {
+  display: block;
+  width: 5.5rem;
+  height: 5.5rem;
+  margin: 0 auto 2rem;
+  color: #d4d4d8;
+}
+
+.reading-content,
+.site-content > .prose {
+  --tw-prose-body: var(--text-body);
+  --tw-prose-headings: var(--text-heading);
+  --tw-prose-bold: var(--text-heading);
+  max-width: none;
+  color: var(--text-body);
+  font-size: var(--type-body);
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+:is(.reading-content, .site-content > .prose) :where(p:not(.page-intro), ul, ol) {
+  margin-block: 0 1.5rem;
+}
+
+.reading-content :where(h2, h3) {
+  margin-block: 2rem 0.75rem;
+  color: var(--text-heading);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+}
+
+.list-title {
+  color: var(--text-heading);
+  font-size: var(--type-list);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.metadata {
+  color: var(--text-muted);
+  font-size: var(--type-metadata);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .site-main { padding-inline: 4rem; }
+}
+
+@media (min-width: 768px) {
+  .site-main { padding-inline: 18rem 2rem; }
+}

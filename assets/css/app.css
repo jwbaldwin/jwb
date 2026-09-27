@@ -1,7 +1,9 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "./typography.css";
 @import "./navigation.css";
+@import "./sidebar.css";
 
 .company-mention {
   display: inline-flex;
