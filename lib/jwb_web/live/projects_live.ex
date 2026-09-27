@@ -25,6 +25,25 @@ defmodule JwbWeb.ProjectsLive do
     ~H"""
     <section class="projects-page">
       <header class="projects-intro">
+        <svg
+          class="block w-[88px] h-[88px] mx-auto mb-8 text-[#d4d4d8]"
+          width="100"
+          height="100"
+          viewBox="0 0 100 100"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="m22 53 23-2 2 25-24 2Z" />
+          <path d="m49 51 25 1 2 25-27-1Z" />
+          <path d="m33 22 26-1 1 26-26 1Z" />
+          <path d="m23 58 4 15m23-46 5-1 1 14m14 20 1 12" />
+        </svg>
         <h1>Projects</h1>
         <p>
           Products and experiments I've built. A look at the problems, the interfaces, and the engineering behind them.
