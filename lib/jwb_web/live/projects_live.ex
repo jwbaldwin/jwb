@@ -23,30 +23,12 @@ defmodule JwbWeb.ProjectsLive do
   @impl true
   def render(%{live_action: :index} = assigns) do
     ~H"""
-    <section class="projects-page">
-      <header class="projects-intro">
-        <svg
-          class="block w-[88px] h-[88px] mx-auto mb-8 text-[#d4d4d8]"
-          width="100"
-          height="100"
-          viewBox="0 0 100 100"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <path d="m22 53 23-2 2 25-24 2Z" />
-          <path d="m49 51 25 1 2 25-27-1Z" />
-          <path d="m33 22 26-1 1 26-26 1Z" />
-          <path d="m23 58 4 15m23-46 5-1 1 14m14 20 1 12" />
-        </svg>
-        <h1>Projects</h1>
-        <p>
-          Products and experiments I've built. A look at the problems, the interfaces, and the engineering behind them.
+    <section class="projects-page projects-index">
+      <header class="page-header">
+        <JwbWeb.PageIllustration.page_illustration name="projects" />
+        <h1 class="page-title">Projects</h1>
+        <p class="page-intro">
+          Products and experiments I've built.
         </p>
       </header>
       <ul class="projects-list">
@@ -57,14 +39,12 @@ defmodule JwbWeb.ProjectsLive do
             data-project={project.slug}
           >
             <span class="project-mark">
-              <img src={project.cover} alt="" width="48" height="48" />
+              <img src={project.cover} alt="" width="32" height="32" />
             </span>
             <span class="project-entry-copy">
-              <span class="project-entry-title">{project.name}</span>
-              <span class="project-entry-description">{project.description}</span>
-              <span class="project-category">{project.category}</span>
+              <span class="project-entry-title list-title">{project.name}</span>
+              <span class="project-category metadata">{project.category}</span>
             </span>
-            <span class="project-entry-arrow" aria-hidden="true">→</span>
           </.link>
         </li>
       </ul>
@@ -82,13 +62,13 @@ defmodule JwbWeb.ProjectsLive do
             <img src={@project.cover} alt="" width="48" height="48" />
           </span>
           <div>
-            <div class="project-category">{@project.category}</div>
-            <h1>{@project.name}</h1>
+            <div class="project-category metadata">{@project.category}</div>
+            <h1 class="page-title">{@project.name}</h1>
           </div>
         </div>
-        <p class="project-summary">{@project.description}</p>
+        <p class="project-summary page-intro">{@project.description}</p>
       </header>
-      <div class="prose prose-invert project-story">{raw(@project.body)}</div>
+      <div class="prose prose-invert reading-content project-story">{raw(@project.body)}</div>
       <div :if={@project.gallery != []} class="project-gallery">
         <figure :for={image <- @project.gallery}>
           <a href={image["src"]} aria-label={"View full-size image: #{image["alt"]}"}>
@@ -101,7 +81,7 @@ defmodule JwbWeb.ProjectsLive do
               decoding="async"
             />
           </a>
-          <figcaption>{image["caption"]}</figcaption>
+          <figcaption class="metadata">{image["caption"]}</figcaption>
         </figure>
       </div>
       <footer class="project-footer">
