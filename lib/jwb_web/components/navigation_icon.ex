@@ -37,15 +37,15 @@ defmodule JwbWeb.NavigationIcon do
           <path class="navigation-stack-middle" d="M19 11V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2M7 7h10" />
           <path class="navigation-stack-top" d="M7 7V5a2 2 0 012-2h6a2 2 0 012 2v2" />
         <% "things" -> %>
-          <g class="navigation-book-first" stroke-width="1.75">
+          <g class="navigation-book-first">
             <rect x="3" y="5" width="4" height="15" rx="1" />
             <path d="M3 9h4" />
           </g>
-          <g class="navigation-book-middle" stroke-width="1.75">
+          <g class="navigation-book-middle">
             <rect x="10" y="4" width="4" height="16" rx="1" />
             <path d="M10 16h4" />
           </g>
-          <g class="navigation-book-last" stroke-width="1.75">
+          <g class="navigation-book-last">
             <rect x="17" y="6" width="4" height="14" rx="1" />
             <path d="M17 10h4" />
           </g>
