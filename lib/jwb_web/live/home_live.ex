@@ -12,15 +12,14 @@ defmodule JwbWeb.HomeLive do
   def render(assigns) do
     ~H"""
     <div class="prose prose-invert prose-p:text-gray-350 max-w-none mx-auto font-base">
-      <p>
+      <h1 class="home-greeting">
         Hey, I'm James!
-      </p>
+      </h1>
       <p>
         I'm a father, husband, and software engineer. I'm currently working on AI at <a
           class="company-mention text-orange-500 font-medium no-underline"
           href="https://www.zapier.com"
-        ><img src={~p"/images/companies/zapier.svg"} width="18" height="18" alt="" /><span>Zapier</span></a>,
-        working hard, building cool stuff.
+        ><img src={~p"/images/companies/zapier.svg"} width="18" height="18" alt="" /><span>Zapier</span></a>.
       </p>
 
       <p>
@@ -28,8 +27,6 @@ defmodule JwbWeb.HomeLive do
           class="company-mention text-blue-500 font-medium no-underline"
           href="https://www.remote.com"
         ><img src={~p"/images/companies/remote.svg"} width="18" height="18" alt="" /><span>Remote</span></a>.
-        Before that I built products with a Co-founder, and before <em>that</em>
-        I worked as a contractor.
       </p>
 
       <p>
