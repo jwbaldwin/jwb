@@ -22,12 +22,13 @@ import {Socket} from "phoenix"
 import {LiveSocket} from "phoenix_live_view"
 import topbar from "../vendor/topbar"
 import Sidebar from "./hooks/sidebar"
+import ThingDetails from "./hooks/thing_details"
 import WritingHighlight from "./hooks/writing_highlight"
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {
   longPollFallbackMs: 2500,
-  hooks: {Sidebar, WritingHighlight},
+  hooks: {Sidebar, ThingDetails, WritingHighlight},
   params: {_csrf_token: csrfToken}
 })
 
