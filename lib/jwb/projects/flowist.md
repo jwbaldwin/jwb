@@ -10,11 +10,11 @@ position: 4
 
 Flowist was a progress tracker for distributed teams. It gave teammates a place to share what they were working on and stay aware of each other's activity.
 
-The interface brought together check-ins, team announcements, and navigation across multiple communities.
+The interface brought together check-ins, team announcements, and navigation across multiple communities. Teams sat within communities, and announcements included a "Mark as seen" action so reading an update was an explicit step.
 
-## Changing the frontend
+## Replacing the frontend and its state management
 
-The API used Elixir and Phoenix. I initially built the frontend with React and Redux, then migrated it to Vue and Vuex, with Tailwind CSS for styling.
+The API used Elixir and Phoenix. I initially built the frontend with React and Redux, then moved both the interface and its state management to Vue and Vuex. Tailwind CSS handled styling.
 
 Vue offered a simpler development experience for me, with a more guided set of choices. That preference shaped the frontend migration.
 

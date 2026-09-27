@@ -1,7 +1,7 @@
 ---
 category: iOS marketplace
 name: Rize
-description: Connecting viral trends with small business participation in an iOS app.
+description: An iOS marketplace connecting people taking part in viral trends with small businesses.
 cover: /images/projects/rize.svg
 gallery: []
 position: 6
@@ -12,10 +12,10 @@ I built Rize alongside two friends. It was an iOS app that connected viral trend
 
 ## Testing before launch
 
-We ran two rounds of user testing before launching. The product needed participation from both sides: people downloading the app and businesses willing to take part.
+We ran two rounds of user testing before launching. Building the app was only one part of getting it off the ground: we also had to bring businesses into the marketplace alongside the people downloading it.
 
 ## What happened
 
 Rize received over 100 App Store downloads, and we onboarded multiple businesses.
 
-The app was available on the App Store after launch; its current availability is unconfirmed.
+Rize was on the App Store for a while. I don't think it's still available.

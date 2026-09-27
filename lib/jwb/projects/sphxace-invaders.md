@@ -1,7 +1,7 @@
 ---
 category: LiveView experiment
 name: Sphxace Invaders
-description: A server-driven arcade game exploring how far LiveView could go.
+description: Space Invaders with a 50-millisecond server-side game loop and no custom browser JavaScript.
 cover: /images/projects/sphxace-invaders.png
 gallery: [{"src":"/images/screen-shot-2021-05-01-at-8.48.27-pm.png","alt":"Space Invaders game beside browser developer tools showing ship positions in the DOM","caption":"The game alongside its DOM updates. Open the image to inspect the ship positions at full size.","width":1190,"height":520}]
 position: 5
@@ -12,10 +12,10 @@ I recreated Space Invaders in Phoenix LiveView to explore its limits for a fast-
 
 ## A 50-millisecond game loop
 
-Every 50 milliseconds, the game updated enemy ships, the player's ship, and projectiles, then detected and displayed collisions.
+Every 50 milliseconds, the game updated enemy ships, the player's ship, and projectiles, then detected and displayed collisions. That meant running the game logic and sending the resulting browser updates 20 times a second.
 
 I wrote the game logic in LiveView, with no custom JavaScript running on the client. LiveView handled the browser updates over its connection to the server.
 
 ## What it demonstrates
 
-The experiment put game state and collision detection on the server while the browser displayed the changes.
+The experiment put game state and collision detection on the server while the browser displayed the changes. Unlike a client-side game, those updates had to travel over the network. Watching ship positions change in the browser's DOM made that work visible.
