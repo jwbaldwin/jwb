@@ -1,0 +1,72 @@
+.writing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.writing-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.writing-entry {
+  display: block;
+  padding: 0.125rem 0;
+  text-decoration: none;
+}
+
+.writing-entry .metadata {
+  margin-top: 0.25rem;
+}
+
+.writing-back {
+  display: inline-block;
+  color: #a1a1aa;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  text-decoration: none;
+  text-underline-offset: 0.25em;
+}
+
+.writing-header {
+  margin-top: 2rem;
+}
+
+.writing-header .metadata {
+  margin-top: 0.75rem;
+}
+
+.writing-article .reading-content h1 {
+  margin-block: 2rem 0.75rem;
+  color: var(--text-heading);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+}
+
+.writing-article .reading-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.writing-footer {
+  border-top: 1px solid #27272a;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+}
+
+.writing-entry:focus-visible,
+.writing-back:focus-visible {
+  outline: 2px solid #d4d4d8;
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .writing-back:hover {
+    color: #fafafa;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+}
