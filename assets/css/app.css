@@ -5,6 +5,8 @@
 @import "./navigation.css";
 @import "./sidebar.css";
 @import "./projects.css";
+@import "./content-lists.css";
+@import "./writing-highlight.css";
 
 .company-mention {
   display: inline-flex;
