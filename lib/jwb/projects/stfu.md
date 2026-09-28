@@ -4,7 +4,7 @@ name: STFU.ai
 description: A simple way for busy friends to make plans, from the first invitation to the RSVP.
 cover: /images/projects/stfu.png
 gallery: [{"src":"/images/stfu-og-image.png","alt":"STFU brand artwork with two coffee cups and the phrase let's rendez-vous","caption":"The coffee-chat identity. This is brand artwork, rather than a screenshot of the app.","width":1200,"height":630}]
-position: 2
+position: 3
 ---
 ## Making a plan
 

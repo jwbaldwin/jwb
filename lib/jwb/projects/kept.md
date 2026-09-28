@@ -4,7 +4,7 @@ name: Kept
 description: Finding buying patterns in Shopify data to help retailers understand and retain their customers.
 cover: /images/projects/kept.png
 gallery: [{"src":"/images/kept-home.jpg","alt":"Kept briefing with customer spending, product trends, and suggested next steps","caption":"The briefing pairs each insight with a next step, such as rewarding customers or restocking a popular product.","width":1600,"height":900}]
-position: 1
+position: 2
 ---
 I designed and built analytics reports that helped Shopify retailers understand buying habits and retain customers. The core work was finding correlations and using machine learning to predict buying habits and retention. The briefing covered customer value and product trends. Reports paired those insights with practical next steps, such as rewarding valuable customers.
 

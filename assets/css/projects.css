@@ -10,6 +10,7 @@
   .project-entry-copy { flex-direction: row; align-items: center; gap: 1rem; }
   .project-entry .project-category { margin-left: auto; text-align: right; }
 }
+.project-entry[data-project="vibes"] { --project-accent: #eee5d5; }
 .project-entry[data-project="kept"] { --project-accent: #c47622; }
 .project-entry[data-project="stfu"] { --project-accent: #6262ff; }
 .project-entry[data-project="mmentum"] { --project-accent: #e4e4e7; }
