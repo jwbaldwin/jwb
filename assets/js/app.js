@@ -24,6 +24,7 @@ import topbar from "../vendor/topbar"
 import Sidebar from "./hooks/sidebar"
 import ThingDetails from "./hooks/thing_details"
 import WritingHighlight from "./hooks/writing_highlight"
+import {installNavigationTransitions} from "./navigation_transitions"
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {
@@ -38,6 +39,7 @@ window.addEventListener("phx:page-loading-start", _info => topbar.show(300))
 window.addEventListener("phx:page-loading-stop", _info => topbar.hide())
 
 // connect if there are any LiveViews on the page
+installNavigationTransitions()
 liveSocket.connect()
 
 // expose liveSocket on window for web console debug logs and latency simulation:

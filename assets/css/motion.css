@@ -1,0 +1,49 @@
+@media (prefers-reduced-motion: no-preference) {
+  .site-content { view-transition-name: content; }
+  #sidebar { view-transition-name: sidebar; }
+  [data-transition-active] { view-transition-name: var(--transition-name); }
+
+  ::view-transition { pointer-events: none; }
+  ::view-transition-group(*) {
+    animation-duration: 360ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-old(sidebar),
+  ::view-transition-new(sidebar) { animation: none; }
+  ::view-transition-old(content) {
+    animation: content-out 140ms ease-out both;
+  }
+  ::view-transition-new(content) {
+    animation: content-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .project-entry .project-mark,
+  .project-entry-title,
+  .thing-image img {
+    transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), color 160ms ease-out;
+  }
+  .project-entry:active .project-mark { transform: scale(0.94); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .project-entry:hover .project-mark { transform: translateY(-2px) rotate(-4deg); }
+    .project-entry:hover .project-entry-title { transform: translateX(3px); }
+    .thing-tile:hover .thing-image img { transform: scale(1.035); }
+  }
+}
+
+@keyframes content-out {
+  to { opacity: 0; transform: translateY(-4px); }
+}
+
+@keyframes content-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation: none !important; }
+}

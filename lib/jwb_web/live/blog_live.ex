@@ -31,7 +31,13 @@ defmodule JwbWeb.BlogLive do
         <ul class="writing-list">
           <li :for={post <- @posts}>
             <.link navigate={~p"/blog/#{post.slug}"} class="writing-entry">
-              <h2 class="list-title">{post.title}</h2>
+              <h2
+                class="list-title"
+                data-transition-name
+                style={"--transition-name: post-#{post.slug}"}
+              >
+                {post.title}
+              </h2>
               <p class="metadata">
                 <time
                   datetime={Date.to_iso8601(post.date)}
@@ -53,7 +59,9 @@ defmodule JwbWeb.BlogLive do
     <article class="writing-article">
       <.link navigate={~p"/blog"} class="writing-back">← All writing</.link>
       <header class="page-header writing-header">
-        <h1 class="page-title">{@post.title}</h1>
+        <h1 class="page-title" data-transition-name style={"--transition-name: post-#{@post.slug}"}>
+          {@post.title}
+        </h1>
         <p class="metadata">
           Published
           <time datetime={Date.to_iso8601(@post.date)}>
