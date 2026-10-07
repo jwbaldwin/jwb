@@ -38,7 +38,11 @@ defmodule JwbWeb.ProjectsLive do
             class="project-entry"
             data-project={project.slug}
           >
-            <span class="project-mark">
+            <span
+              class="project-mark"
+              data-transition-name
+              style={"--transition-name: project-#{project.slug}"}
+            >
               <img src={project.cover} alt="" width="32" height="32" />
             </span>
             <span class="project-entry-copy">
@@ -58,7 +62,11 @@ defmodule JwbWeb.ProjectsLive do
       <.link navigate={~p"/projects"} class="project-back">← All projects</.link>
       <header class="project-header">
         <div class="project-heading">
-          <span class="project-mark">
+          <span
+            class="project-mark"
+            data-transition-name
+            style={"--transition-name: project-#{@project.slug}"}
+          >
             <img src={@project.cover} alt="" width="48" height="48" />
           </span>
           <div>
