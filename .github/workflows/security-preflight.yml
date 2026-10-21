@@ -24,7 +24,8 @@ jobs:
             --publish 127.0.0.1:4000:4000 \
             --env SECRET_KEY_BASE=security-preflight-only-not-a-production-secret-01234567890123456789 \
             --env PHX_HOST=localhost --env PORT=4000 \
-            --env RELEASE_DISTRIBUTION=none \
+            --env FLY_APP_NAME=jwb-preflight --env FLY_IMAGE_REF=security-preflight \
+            --env FLY_PRIVATE_IP=::1 \
             jwb:security-preflight
       - name: Exercise native Markdown and list compiled routes
         run: |
