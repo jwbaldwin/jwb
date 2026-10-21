@@ -5,8 +5,8 @@ defmodule Jwb.Blogs do
 
   alias Jwb.Blogs.Post
 
-  for app <- [:earmark, :makeup_elixir] do
-    Application.ensure_all_started(app)
+  for app <- [:mdex, :makeup_elixir] do
+    {:ok, _} = Application.ensure_all_started(app)
   end
 
   posts_paths = "lib/jwb/blogs/*.md" |> Path.wildcard() |> Enum.sort()

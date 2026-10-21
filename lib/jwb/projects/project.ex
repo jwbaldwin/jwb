@@ -41,7 +41,7 @@ defmodule Jwb.Projects.Project do
   end
 
   defp parse_attr(:body, body) do
-    body |> Earmark.as_html!() |> Jwb.Blogs.Highlighter.highlight_code_blocks()
+    Jwb.Markdown.to_html!(body)
   end
 
   defp parse_attr(:gallery, value) do
