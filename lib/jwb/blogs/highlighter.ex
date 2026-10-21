@@ -33,7 +33,7 @@ defmodule Jwb.Blogs.Highlighter do
   """
   def highlight_code_blocks(html, opts \\ []) do
     Regex.replace(
-      ~r/<pre><code(?:\s+class="(\w*)")?>([^<]*)<\/code><\/pre>/,
+      ~r/<pre><code(?:\s+class="(?:language-)?(\w*)")?>([^<]*)<\/code><\/pre>/,
       html,
       &highlight_code_block(&1, &2, &3, opts)
     )

@@ -18,6 +18,13 @@ defmodule JwbWeb.SecurityUpdateTest do
     end
   end
 
+  test "every blog post mounts with its rendered content", %{conn: conn} do
+    for post <- Jwb.Blogs.list_posts() do
+      assert {:ok, view, _html} = live(conn, "/blog/#{post.slug}")
+      assert has_element?(view, "main h1", post.title)
+    end
+  end
+
   test "HTTP and socket transports remain available" do
     server = start_supervised!({Bandit, plug: JwbWeb.Endpoint, ip: {127, 0, 0, 1}, port: 0})
     {:ok, {_address, port}} = ThousandIsland.listener_info(server)
