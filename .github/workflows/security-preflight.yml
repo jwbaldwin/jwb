@@ -1,6 +1,9 @@
 name: Security preflight
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - jwb-security-updates
 
 permissions:
   contents: read
