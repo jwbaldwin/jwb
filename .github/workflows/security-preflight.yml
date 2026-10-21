@@ -49,6 +49,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import json
+          import subprocess
           import time
           import urllib.error
           import urllib.request
@@ -67,7 +68,15 @@ jobs:
               try:
                   fetch("/")
                   break
-              except (urllib.error.URLError, TimeoutError):
+              except urllib.error.HTTPError:
+                  raise
+              except (urllib.error.URLError, TimeoutError, ConnectionError):
+                  running = subprocess.check_output(
+                      ["docker", "inspect", "--format", "{{.State.Running}}", "jwb-preflight"],
+                      text=True,
+                  ).strip()
+                  if running != "true":
+                      raise RuntimeError("release container exited before HTTP readiness")
                   if time.monotonic() >= deadline:
                       raise
                   time.sleep(1)
@@ -105,6 +114,7 @@ jobs:
         if: always()
         run: |
           if docker container inspect jwb-preflight > /dev/null 2>&1; then
+            docker inspect --format 'running={{.State.Running}} exit={{.State.ExitCode}} oom={{.State.OOMKilled}}' jwb-preflight
             docker logs jwb-preflight
             docker rm --force jwb-preflight
           fi
