@@ -43,8 +43,9 @@ jobs:
             highlighted_routes = for {path, body} <- details,
               String.contains?(body, "highlight makeup"), do: path
             true = highlighted_routes != []
-            IO.puts(Jason.encode!(%{routes: routes, highlighted_routes: highlighted_routes}))
-          ' > preflight-routes.json
+            File.write!("/tmp/preflight-routes.json", Jason.encode!(%{routes: routes, highlighted_routes: highlighted_routes}))
+          '
+          docker cp jwb-preflight:/tmp/preflight-routes.json preflight-routes.json
           cat preflight-routes.json
       - name: Smoke rendered pages and bundled assets
         run: |
