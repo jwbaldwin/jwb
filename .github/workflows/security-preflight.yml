@@ -1,0 +1,107 @@
+name: Security preflight
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Build the Linux release
+        run: docker build --platform linux/amd64 --tag jwb:security-preflight .
+      - name: Start an isolated release
+        run: |
+          docker run --detach --name jwb-preflight \
+            --publish 127.0.0.1:4000:4000 \
+            --env SECRET_KEY_BASE=security-preflight-only-not-a-production-secret-01234567890123456789 \
+            --env PHX_HOST=localhost --env PORT=4000 \
+            --env RELEASE_DISTRIBUTION=none \
+            jwb:security-preflight
+      - name: Exercise native Markdown and list compiled routes
+        run: |
+          docker exec jwb-preflight /app/bin/jwb eval '
+            for app <- [:mdex, :makeup_elixir], do: ({:ok, _} = Application.ensure_all_started(app))
+            highlighted = Jwb.Markdown.to_html!("```elixir\nIO.puts(\"hello\")\n```")
+            true = String.contains?(highlighted, "highlight makeup elixir")
+            false = String.contains?(Jwb.Markdown.to_html!("<script>alert(1)</script>"), "<script>")
+            posts = Jwb.Blogs.list_posts()
+            projects = Jwb.Projects.list_projects()
+            true = posts != [] and projects != []
+            details = Enum.map(posts, &{"/blog/#{&1.slug}", &1.body}) ++
+              Enum.map(projects, &{"/projects/#{&1.slug}", &1.body})
+            routes = ["/", "/blog", "/projects", "/things"] ++ Enum.map(details, &elem(&1, 0))
+            highlighted_routes = for {path, body} <- details,
+              String.contains?(body, "highlight makeup"), do: path
+            true = highlighted_routes != []
+            IO.puts(Jason.encode!(%{routes: routes, highlighted_routes: highlighted_routes}))
+          ' > preflight-routes.json
+          cat preflight-routes.json
+      - name: Smoke rendered pages and bundled assets
+        run: |
+          python3 - <<'PY'
+          import json
+          import time
+          import urllib.error
+          import urllib.request
+          from html.parser import HTMLParser
+
+          base = "http://127.0.0.1:4000"
+
+          def fetch(path):
+              with urllib.request.urlopen(base + path, timeout=5) as response:
+                  assert response.status == 200, path
+                  assert response.geturl().startswith(base + "/"), path
+                  return response.read().decode()
+
+          deadline = time.monotonic() + 60
+          while True:
+              try:
+                  fetch("/")
+                  break
+              except (urllib.error.URLError, TimeoutError):
+                  if time.monotonic() >= deadline:
+                      raise
+                  time.sleep(1)
+
+          class Assets(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.paths = set()
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  path = attrs.get("src") if tag == "script" else attrs.get("href")
+                  if path and path.startswith("/assets/"):
+                      self.paths.add(path)
+
+          with open("preflight-routes.json") as routes_file:
+              compiled = json.load(routes_file)
+          assets = Assets()
+          for path in compiled["routes"]:
+              body = fetch(path)
+              assert "<main" in body and "data-phx-session" in body, path
+              if path in compiled["highlighted_routes"]:
+                  assert "highlight makeup" in body, path
+              assets.feed(body)
+              print("HTTP 200", path)
+          for suffix in (".css", ".js"):
+              paths = [path for path in assets.paths if path.split("?")[0].endswith(suffix)]
+              assert paths, f"missing {suffix} asset"
+              for path in paths:
+                  assert len(fetch(path)) > 100, path
+                  print("ASSET 200", path)
+          print("LINUX_RELEASE_SMOKE_OK: native Markdown, compiled pages, CSS and JavaScript")
+          PY
+      - name: Show release logs and remove the test container
+        if: always()
+        run: |
+          if docker container inspect jwb-preflight > /dev/null 2>&1; then
+            docker logs jwb-preflight
+            docker rm --force jwb-preflight
+          fi
